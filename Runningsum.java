@@ -1,20 +1,20 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
+
 package runningsum;
-
-/**
- *
- * @author HP
- */
-public class Runningsum {
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
+import java.util.*;
+public class Runningsum{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        int[] nums={1,2,3,4};
+        System.out.println(Arrays.toString(runningSum(nums)));
     }
-    
+    static int[] runningSum(int[] nums){
+        int[] ans=new int[nums.length];
+        ans[0]=nums[0];
+        for(int i=1;i<nums.length;i++)
+        {
+            ans[i]=nums[i]+ ans[i-1];
+        }
+        return ans;
+    }
+            
 }
